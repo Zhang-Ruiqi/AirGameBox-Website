@@ -585,3 +585,104 @@ details.faq p { margin: 12px 0 0; }
   .float-chip { display: none; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px 26px 24px;
+  box-shadow: var(--shadow);
+  margin: 26px 0 8px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.field { margin-bottom: 16px; }
+.form-row .field { margin-bottom: 0; }
+
+.contact-form label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 11px 14px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.contact-form textarea { resize: vertical; min-height: 120px; }
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--ink-faint); }
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(91, 108, 255, 0.15);
+}
+
+.form-error {
+  color: #d93838;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-send {
+  flex: 1 1 auto;
+  min-width: 150px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.btn-send:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-send:active { transform: translateY(0); }
+.btn-send.gmail { background: #ea4335; }
+.btn-send.outlook { background: #0f6cbd; }
+.btn-send.mailapp { background: var(--ink); }
+
+.form-hint {
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  margin: 16px 0 0;
+}
+.form-hint a { font-weight: 600; }
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+  .form-row .field { margin-bottom: 16px; }
+  .btn-send { flex-basis: 100%; }
+}
