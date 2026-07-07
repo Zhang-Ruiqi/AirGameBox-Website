@@ -63,6 +63,7 @@ a:hover { color: var(--brand-dark); }
   align-items: center;
   justify-content: space-between;
   height: 64px;
+  gap: 8px;
 }
 
 .logo {
@@ -88,6 +89,8 @@ a:hover { color: var(--brand-dark); }
   align-items: center;
   gap: 28px;
   list-style: none;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .nav-links a {
@@ -574,8 +577,11 @@ details.faq p { margin: 12px 0 0; }
 }
 
 @media (max-width: 600px) {
-  .nav-links { gap: 16px; }
+  .nav-links { gap: 10px; }
   .nav-links .hide-mobile { display: none; }
+  .nav-cta { padding: 6px 12px; font-size: 0.82rem; }
+  .lang-toggle { padding: 5px 10px; font-size: 0.82rem; }
+  .nav-links a { font-size: 0.85rem; }
   .hero { padding: 56px 0 64px; }
   .features-grid { grid-template-columns: 1fr; }
   .support-grid { grid-template-columns: 1fr; }
