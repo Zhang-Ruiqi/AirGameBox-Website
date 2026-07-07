@@ -91,6 +91,7 @@ a:hover { color: var(--brand-dark); }
   list-style: none;
   flex-shrink: 1;
   min-width: 0;
+  overflow: hidden;
 }
 
 .nav-links a {
@@ -106,6 +107,7 @@ a:hover { color: var(--brand-dark); }
   padding: 8px 18px;
   border-radius: 999px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .nav-cta:hover { background: #303952; }
 
