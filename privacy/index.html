@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Privacy Policy — Xevigo" data-title-zh="隐私政策 —— Xevigo">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Xevigo</title>
+  <script>
+    (function () {
+      try {
+        var el = document.documentElement;
+        var saved = localStorage.getItem('xv-locale');
+        var loc = saved || ((navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+        el.setAttribute('data-locale', loc);
+        el.setAttribute('lang', loc === 'zh' ? 'zh-Hans' : 'en');
+        var te = el.getAttribute('data-title-en'), tz = el.getAttribute('data-title-zh');
+        if (te && tz) document.title = loc === 'zh' ? tz : te;
+      } catch (e) {}
+    })();
+  </script>
   <meta name="description" content="Privacy Policy for AirGameBox and other apps by Xevigo.">
   <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -21,63 +34,93 @@
         Xevigo
       </a>
       <ul class="nav-links">
-        <li class="hide-mobile"><a href="/">Home</a></li>
-        <li><a href="/support/">Support</a></li>
-        <li class="hide-mobile"><a href="/terms/">Terms</a></li>
-        <li><a href="/#download" class="nav-cta">Get the App</a></li>
+        <li class="hide-mobile"><a href="/"><span data-l="en">Home</span><span data-l="zh">首页</span></a></li>
+        <li><a href="/support/"><span data-l="en">Support</span><span data-l="zh">支持</span></a></li>
+        <li class="hide-mobile"><a href="/terms/"><span data-l="en">Terms</span><span data-l="zh">条款</span></a></li>
+        <li><a href="/#download" class="nav-cta"><span data-l="en">Get the App</span><span data-l="zh">获取应用</span></a></li>
+        <li><button class="lang-toggle" type="button" aria-label="Switch language / 切换语言">🌐 <span data-l="en">中文</span><span data-l="zh">EN</span></button></li>
       </ul>
     </div>
   </header>
 
   <section class="page-hero">
     <div class="container">
-      <h1>Privacy Policy</h1>
-      <p class="meta">Last updated: July 7, 2026 · Applies to AirGameBox and all apps published by Xevigo</p>
+      <h1 data-l="en">Privacy Policy</h1>
+      <h1 data-l="zh">隐私政策</h1>
+      <p class="meta" data-l="en">Last updated: July 7, 2026 · Applies to AirGameBox and all apps published by Xevigo</p>
+      <p class="meta" data-l="zh">最后更新：2026 年 7 月 7 日 · 适用于 AirGameBox 及 Xevigo 发布的所有应用</p>
     </div>
   </section>
 
   <main class="content">
-    <p>Xevigo ("we," "us," or "our") respects your privacy. This Privacy Policy explains what information our mobile applications, including <strong>AirGameBox</strong> (the "App"), collect, how it is used, and the choices you have. By downloading or using the App, you agree to the practices described in this policy.</p>
+    <p data-l="en">Xevigo ("we," "us," or "our") respects your privacy. This Privacy Policy explains what information our mobile applications, including <strong>AirGameBox</strong> (the "App"), collect, how it is used, and the choices you have. By downloading or using the App, you agree to the practices described in this policy.</p>
+    <p data-l="zh">Xevigo（"我们"）尊重你的隐私。本隐私政策说明我们的移动应用（包括 <strong>AirGameBox</strong>，以下称"本应用"）会收集哪些信息、如何使用这些信息，以及你拥有的选择。下载或使用本应用，即表示你同意本政策所述的做法。</p>
 
     <div class="notice-card">
-      <p><strong>In short:</strong> AirGameBox does not require an account, does not ask for your name, email address, or contact details, and does not collect personal information for its core gameplay.</p>
+      <p data-l="en"><strong>In short:</strong> AirGameBox does not require an account, does not ask for your name, email address, or contact details, and does not collect personal information for its core gameplay.</p>
+      <p data-l="zh"><strong>简而言之：</strong>AirGameBox 无需账号，不会索取你的姓名、邮箱或联系方式，也不会为核心玩法收集个人信息。</p>
     </div>
 
-    <h2>1. Information We Collect</h2>
-    <h3>Information you provide</h3>
-    <p>The App does not require registration and does not ask you to provide personal information such as your name, email address, phone number, or payment details in order to play. If you contact us for support, we will receive the information you choose to include in your message (such as your email address), which we use only to respond to your inquiry.</p>
+    <h2 data-l="en">1. Information We Collect</h2>
+    <h2 data-l="zh">1. 我们收集的信息</h2>
+    <h3 data-l="en">Information you provide</h3>
+    <h3 data-l="zh">你提供的信息</h3>
+    <p data-l="en">The App does not require registration and does not ask you to provide personal information such as your name, email address, phone number, or payment details in order to play. If you contact us for support, we will receive the information you choose to include in your message (such as your email address), which we use only to respond to your inquiry.</p>
+    <p data-l="zh">本应用无需注册，也不会要求你为了游玩而提供姓名、邮箱、电话号码或付款信息等个人信息。如果你联系我们寻求支持，我们会收到你在留言中选择包含的信息（例如你的邮箱地址），这些信息仅用于回复你的咨询。</p>
 
-    <h3>Information collected automatically</h3>
-    <p>Like most mobile apps, the App may automatically receive limited, non-personal technical information necessary for it to function properly, such as device model, operating system version, app version, language settings, and anonymous crash or diagnostic data provided by Apple. This information cannot be used to identify you personally and is used solely to maintain and improve the App.</p>
+    <h3 data-l="en">Information collected automatically</h3>
+    <h3 data-l="zh">自动收集的信息</h3>
+    <p data-l="en">Like most mobile apps, the App may automatically receive limited, non-personal technical information necessary for it to function properly, such as device model, operating system version, app version, language settings, and anonymous crash or diagnostic data provided by Apple. This information cannot be used to identify you personally and is used solely to maintain and improve the App.</p>
+    <p data-l="zh">与大多数移动应用一样，本应用可能会自动接收为其正常运行所必需的、有限的非个人技术信息，例如设备型号、操作系统版本、应用版本、语言设置，以及 Apple 提供的匿名崩溃或诊断数据。这些信息无法用于识别你的个人身份，仅用于维护和改进本应用。</p>
 
-    <h2>2. How We Use Information</h2>
-    <p>We use the limited information described above to: operate and maintain the App; diagnose and fix crashes, bugs, and performance issues; improve gameplay and user experience; and respond to support requests you send us.</p>
-    <p>We do not use your information for advertising profiles, and we do not sell, rent, or trade any user information to third parties.</p>
+    <h2 data-l="en">2. How We Use Information</h2>
+    <h2 data-l="zh">2. 我们如何使用信息</h2>
+    <p data-l="en">We use the limited information described above to: operate and maintain the App; diagnose and fix crashes, bugs, and performance issues; improve gameplay and user experience; and respond to support requests you send us.</p>
+    <p data-l="zh">我们使用上述有限信息用于：运行和维护本应用；诊断并修复崩溃、缺陷和性能问题；改进玩法和用户体验；以及回复你发送给我们的支持请求。</p>
+    <p data-l="en">We do not use your information for advertising profiles, and we do not sell, rent, or trade any user information to third parties.</p>
+    <p data-l="zh">我们不会将你的信息用于广告画像，也不会向第三方出售、出租或交易任何用户信息。</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>The App is distributed through the Apple App Store, and Apple may collect information as described in its own privacy policy (see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>). Aside from Apple's standard platform services, the App does not integrate third-party advertising networks or third-party analytics SDKs that collect personal data.</p>
-    <p>If a future update introduces any third-party service that collects data, we will update this Privacy Policy and the App Store privacy label accordingly before the change takes effect.</p>
+    <h2 data-l="en">3. Third-Party Services</h2>
+    <h2 data-l="zh">3. 第三方服务</h2>
+    <p data-l="en">The App is distributed through the Apple App Store, and Apple may collect information as described in its own privacy policy (see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>). Aside from Apple's standard platform services, the App does not integrate third-party advertising networks or third-party analytics SDKs that collect personal data.</p>
+    <p data-l="zh">本应用通过 Apple App Store 分发，Apple 可能会按照其自身隐私政策所述收集信息（参见 <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple 隐私政策</a>）。除 Apple 的标准平台服务外，本应用不集成任何收集个人数据的第三方广告网络或第三方分析 SDK。</p>
+    <p data-l="en">If a future update introduces any third-party service that collects data, we will update this Privacy Policy and the App Store privacy label accordingly before the change takes effect.</p>
+    <p data-l="zh">如果未来的更新引入任何收集数据的第三方服务，我们会在变更生效前相应更新本隐私政策和 App Store 隐私标签。</p>
 
-    <h2>4. Data Retention</h2>
-    <p>Because the App does not collect personal information during gameplay, there is no personal gameplay data for us to retain. Game progress and settings are stored locally on your device and are deleted when you uninstall the App. Support correspondence is retained only as long as needed to resolve your inquiry.</p>
+    <h2 data-l="en">4. Data Retention</h2>
+    <h2 data-l="zh">4. 数据保留</h2>
+    <p data-l="en">Because the App does not collect personal information during gameplay, there is no personal gameplay data for us to retain. Game progress and settings are stored locally on your device and are deleted when you uninstall the App. Support correspondence is retained only as long as needed to resolve your inquiry.</p>
+    <p data-l="zh">由于本应用在游玩过程中不收集个人信息，我们没有可保留的个人游玩数据。游戏进度和设置保存在你的设备本地，卸载本应用时即被删除。支持往来邮件仅在解决你的咨询所需的期限内保留。</p>
 
-    <h2>5. Children's Privacy</h2>
-    <p>The App is designed to be family-friendly and suitable for general audiences. We do not knowingly collect personal information from anyone, including children under the age of 13 (or the equivalent minimum age in your jurisdiction). If you believe a child has provided us personal information — for example, through a support email — please contact us and we will promptly delete it.</p>
+    <h2 data-l="en">5. Children's Privacy</h2>
+    <h2 data-l="zh">5. 儿童隐私</h2>
+    <p data-l="en">The App is designed to be family-friendly and suitable for general audiences. We do not knowingly collect personal information from anyone, including children under the age of 13 (or the equivalent minimum age in your jurisdiction). If you believe a child has provided us personal information — for example, through a support email — please contact us and we will promptly delete it.</p>
+    <p data-l="zh">本应用旨在适合家庭和大众用户。我们不会在知情的情况下收集任何人的个人信息，包括 13 岁以下（或你所在司法管辖区规定的相应最低年龄）的儿童。如果你认为有儿童向我们提供了个人信息——例如通过支持邮件——请联系我们，我们会及时删除。</p>
 
-    <h2>6. Data Security</h2>
-    <p>We take reasonable technical and organizational measures to protect any information we handle. Because the App collects minimal data by design, your exposure is inherently limited.</p>
+    <h2 data-l="en">6. Data Security</h2>
+    <h2 data-l="zh">6. 数据安全</h2>
+    <p data-l="en">We take reasonable technical and organizational measures to protect any information we handle. Because the App collects minimal data by design, your exposure is inherently limited.</p>
+    <p data-l="zh">我们采取合理的技术和组织措施来保护我们处理的任何信息。由于本应用在设计上仅收集极少量数据，你的风险敞口本身就很有限。</p>
 
-    <h2>7. Your Rights</h2>
-    <p>Depending on where you live, you may have rights under applicable privacy laws (such as the GDPR or CCPA), including the right to access, correct, or delete information we hold about you. Since the App does not maintain user accounts or personal data, in most cases the only information we could hold is support correspondence. To exercise any right, contact us using the details below and we will respond within a reasonable timeframe.</p>
+    <h2 data-l="en">7. Your Rights</h2>
+    <h2 data-l="zh">7. 你的权利</h2>
+    <p data-l="en">Depending on where you live, you may have rights under applicable privacy laws (such as the GDPR or CCPA), including the right to access, correct, or delete information we hold about you. Since the App does not maintain user accounts or personal data, in most cases the only information we could hold is support correspondence. To exercise any right, contact us using the details below and we will respond within a reasonable timeframe.</p>
+    <p data-l="zh">根据你所在地区的不同，你可能依据适用的隐私法律（如 GDPR 或 CCPA）享有相应权利，包括访问、更正或删除我们持有的与你相关信息的权利。由于本应用不维护用户账号或个人数据，在大多数情况下，我们可能持有的唯一信息就是支持往来邮件。如需行使任何权利，请使用下方的联系方式与我们联系，我们会在合理期限内回复。</p>
 
-    <h2>8. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date at the top of this page. Material changes will be communicated through the App or this website. Your continued use of the App after changes take effect constitutes acceptance of the revised policy.</p>
+    <h2 data-l="en">8. Changes to This Policy</h2>
+    <h2 data-l="zh">8. 本政策的变更</h2>
+    <p data-l="en">We may update this Privacy Policy from time to time. When we do, we will revise the "Last updated" date at the top of this page. Material changes will be communicated through the App or this website. Your continued use of the App after changes take effect constitutes acceptance of the revised policy.</p>
+    <p data-l="zh">我们可能会不时更新本隐私政策。更新时，我们会修改本页顶部的"最后更新"日期。重大变更将通过本应用或本网站告知。变更生效后，你继续使用本应用即视为接受修订后的政策。</p>
 
-    <h2>9. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+    <h2 data-l="en">9. Contact Us</h2>
+    <h2 data-l="zh">9. 联系我们</h2>
+    <p data-l="en">If you have any questions about this Privacy Policy or our privacy practices, please contact us:</p>
+    <p data-l="zh">如果你对本隐私政策或我们的隐私做法有任何疑问，请联系我们：</p>
     <ul>
-      <li><strong>Email:</strong> <a href="mailto:support@xevigo.com">support@xevigo.com</a></li>
-      <li><strong>Support page:</strong> <a href="/support/">xevigo.com/support</a></li>
+      <li data-l="en"><strong>Email:</strong> <a href="mailto:support@xevigo.com">support@xevigo.com</a></li>
+      <li data-l="zh"><strong>邮箱：</strong><a href="mailto:support@xevigo.com">support@xevigo.com</a></li>
+      <li data-l="en"><strong>Support page:</strong> <a href="/support/">xevigo.com/support</a></li>
+      <li data-l="zh"><strong>支持页面：</strong><a href="/support/">xevigo.com/support</a></li>
     </ul>
   </main>
 
@@ -88,11 +131,11 @@
         Xevigo
       </a>
       <ul class="footer-links">
-        <li><a href="/support/">Support</a></li>
-        <li><a href="/privacy/">Privacy Policy</a></li>
-        <li><a href="/terms/">Terms of Use</a></li>
+        <li><a href="/support/"><span data-l="en">Support</span><span data-l="zh">支持</span></a></li>
+        <li><a href="/privacy/"><span data-l="en">Privacy Policy</span><span data-l="zh">隐私政策</span></a></li>
+        <li><a href="/terms/"><span data-l="en">Terms of Use</span><span data-l="zh">使用条款</span></a></li>
       </ul>
-      <p class="footer-copy">© 2026 Xevigo. All rights reserved.</p>
+      <p class="footer-copy"><span data-l="en">© 2026 Xevigo. All rights reserved.</span><span data-l="zh">© 2026 Xevigo. 保留所有权利。</span></p>
     </div>
   </footer>
 

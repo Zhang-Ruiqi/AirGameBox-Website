@@ -4,6 +4,37 @@
    never feels dead, even on devices/browsers with no default mail handler —
    which is the most common reason a mailto link appears to "do nothing". */
 (function () {
+  function currentLocale() {
+    return document.documentElement.getAttribute('data-locale') === 'zh' ? 'zh' : 'en';
+  }
+  function L(en, zh) { return currentLocale() === 'zh' ? zh : en; }
+
+  function applyLocale(loc) {
+    var el = document.documentElement;
+    el.setAttribute('data-locale', loc);
+    el.setAttribute('lang', loc === 'zh' ? 'zh-Hans' : 'en');
+    try { localStorage.setItem('xv-locale', loc); } catch (e) {}
+    var te = el.getAttribute('data-title-en'), tz = el.getAttribute('data-title-zh');
+    if (te && tz) document.title = loc === 'zh' ? tz : te;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ph-en]'), function (n) {
+      var v = loc === 'zh' ? n.getAttribute('data-ph-zh') : n.getAttribute('data-ph-en');
+      if (v != null) n.setAttribute('placeholder', v);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('option[data-en]'), function (o) {
+      var v = loc === 'zh' ? o.getAttribute('data-zh') : o.getAttribute('data-en');
+      if (v != null) o.textContent = v;
+    });
+  }
+
+  function initLocale() {
+    applyLocale(currentLocale());
+    Array.prototype.forEach.call(document.querySelectorAll('.lang-toggle'), function (b) {
+      b.addEventListener('click', function () {
+        applyLocale(currentLocale() === 'zh' ? 'en' : 'zh');
+      });
+    });
+  }
+
   function injectStyles() {
     if (document.getElementById('xv-toast-style')) return;
     var s = document.createElement('style');
@@ -59,6 +90,7 @@
   }
 
   function enhance() {
+    initLocale();
     var links = document.querySelectorAll('a[href^="mailto:"]');
     Array.prototype.forEach.call(links, function (a) {
       a.addEventListener('click', function () {
@@ -66,7 +98,7 @@
           a.getAttribute('href').replace(/^mailto:/i, '').split('?')[0]
         );
         copy(email).then(function (ok) {
-          toast(ok ? ('Email address copied: ' + email) : ('Contact us at: ' + email));
+          toast((ok ? L('Email address copied: ', '邮箱地址已复制：') : L('Contact us at: ', '联系我们：')) + email);
         });
         // No preventDefault(): a configured mail app still opens as normal.
       });

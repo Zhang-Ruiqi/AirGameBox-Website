@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Support — Xevigo" data-title-zh="支持 —— Xevigo">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support — Xevigo</title>
+  <script>
+    (function () {
+      try {
+        var el = document.documentElement;
+        var saved = localStorage.getItem('xv-locale');
+        var loc = saved || ((navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+        el.setAttribute('data-locale', loc);
+        el.setAttribute('lang', loc === 'zh' ? 'zh-Hans' : 'en');
+        var te = el.getAttribute('data-title-en'), tz = el.getAttribute('data-title-zh');
+        if (te && tz) document.title = loc === 'zh' ? tz : te;
+      } catch (e) {}
+    })();
+  </script>
   <meta name="description" content="Get help with AirGameBox. Contact Xevigo support and browse frequently asked questions.">
   <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -21,74 +34,92 @@
         Xevigo
       </a>
       <ul class="nav-links">
-        <li class="hide-mobile"><a href="/">Home</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li class="hide-mobile"><a href="/terms/">Terms</a></li>
-        <li><a href="/#download" class="nav-cta">Get the App</a></li>
+        <li class="hide-mobile"><a href="/"><span data-l="en">Home</span><span data-l="zh">首页</span></a></li>
+        <li><a href="/privacy/"><span data-l="en">Privacy</span><span data-l="zh">隐私</span></a></li>
+        <li class="hide-mobile"><a href="/terms/"><span data-l="en">Terms</span><span data-l="zh">条款</span></a></li>
+        <li><a href="/#download" class="nav-cta"><span data-l="en">Get the App</span><span data-l="zh">获取应用</span></a></li>
+        <li><button class="lang-toggle" type="button" aria-label="Switch language / 切换语言">🌐 <span data-l="en">中文</span><span data-l="zh">EN</span></button></li>
       </ul>
     </div>
   </header>
 
   <section class="page-hero">
     <div class="container">
-      <h1>Support</h1>
-      <p class="meta">We're here to help with AirGameBox and any other Xevigo app.</p>
+      <h1 data-l="en">Support</h1>
+      <h1 data-l="zh">支持</h1>
+      <p class="meta" data-l="en">We're here to help with AirGameBox and any other Xevigo app.</p>
+      <p class="meta" data-l="zh">我们随时为 AirGameBox 及其他 Xevigo 应用提供帮助。</p>
     </div>
   </section>
 
   <main class="content">
-    <h2>Get in touch</h2>
-    <p>The fastest way to reach us is by email. We read every message and typically reply within <strong>1–2 business days</strong>.</p>
+    <h2 data-l="en">Get in touch</h2>
+    <h2 data-l="zh">联系我们</h2>
+    <p data-l="en">The fastest way to reach us is by email. We read every message and typically reply within <strong>1–2 business days</strong>.</p>
+    <p data-l="zh">联系我们最快的方式是发送邮件。我们会阅读每一条留言，通常在 <strong>1–2 个工作日</strong>内回复。</p>
 
     <div class="support-grid">
       <div class="support-card">
         <div class="feature-icon fi-1">✉️</div>
-        <h3>Email support</h3>
-        <p>Questions, bug reports, or feedback — send us an email and we'll get back to you.</p>
+        <h3 data-l="en">Email support</h3>
+        <h3 data-l="zh">邮件支持</h3>
+        <p data-l="en">Questions, bug reports, or feedback — send us an email and we'll get back to you.</p>
+        <p data-l="zh">有疑问、想报告问题或提供反馈——给我们发邮件，我们会尽快回复。</p>
         <a class="card-link" href="mailto:support@xevigo.com">support@xevigo.com</a>
       </div>
       <div class="support-card">
         <div class="feature-icon fi-2">🐞</div>
-        <h3>Report a bug</h3>
-        <p>Found something broken? Include your device model, iOS version, and what happened — it helps us fix it faster.</p>
-        <a class="card-link" href="mailto:support@xevigo.com?subject=AirGameBox%20Bug%20Report">Send a bug report</a>
+        <h3 data-l="en">Report a bug</h3>
+        <h3 data-l="zh">报告问题</h3>
+        <p data-l="en">Found something broken? Include your device model, iOS version, and what happened — it helps us fix it faster.</p>
+        <p data-l="zh">发现异常？请附上你的设备型号、iOS 版本和具体情况——这能帮助我们更快修复。</p>
+        <a class="card-link" href="mailto:support@xevigo.com?subject=AirGameBox%20Bug%20Report"><span data-l="en">Send a bug report</span><span data-l="zh">发送问题报告</span></a>
       </div>
     </div>
 
-    <h2>Frequently asked questions</h2>
+    <h2 data-l="en">Frequently asked questions</h2>
+    <h2 data-l="zh">常见问题</h2>
 
     <details class="faq">
-      <summary>Is AirGameBox free?</summary>
-      <p>Yes, AirGameBox is free to download from the App Store.</p>
+      <summary><span data-l="en">Is AirGameBox free?</span><span data-l="zh">AirGameBox 收费吗？</span></summary>
+      <p data-l="en">Yes, AirGameBox is free to download from the App Store.</p>
+      <p data-l="zh">AirGameBox 可在 App Store 免费下载。</p>
     </details>
 
     <details class="faq">
-      <summary>Do I need an account to play?</summary>
-      <p>No. AirGameBox does not require registration or sign-in. Just download the app and start playing.</p>
+      <summary><span data-l="en">Do I need an account to play?</span><span data-l="zh">需要账号才能玩吗？</span></summary>
+      <p data-l="en">No. AirGameBox does not require registration or sign-in. Just download the app and start playing.</p>
+      <p data-l="zh">不需要。AirGameBox 无需注册或登录，下载后即可开玩。</p>
     </details>
 
     <details class="faq">
-      <summary>Does AirGameBox work offline?</summary>
-      <p>Yes. AirGameBox is designed to work without an internet connection, so you can play anywhere.</p>
+      <summary><span data-l="en">Does AirGameBox work offline?</span><span data-l="zh">AirGameBox 可以离线使用吗？</span></summary>
+      <p data-l="en">Yes. AirGameBox is designed to work without an internet connection, so you can play anywhere.</p>
+      <p data-l="zh">可以。AirGameBox 无需联网即可游玩，随时随地都能玩。</p>
     </details>
 
     <details class="faq">
-      <summary>Will my game progress be saved?</summary>
-      <p>Game progress and settings are stored locally on your device. Note that uninstalling the app will remove locally stored progress.</p>
+      <summary><span data-l="en">Will my game progress be saved?</span><span data-l="zh">我的游戏进度会被保存吗？</span></summary>
+      <p data-l="en">Game progress and settings are stored locally on your device. Note that uninstalling the app will remove locally stored progress.</p>
+      <p data-l="zh">游戏进度和设置会保存在你的设备本地。请注意，卸载应用会清除本地保存的进度。</p>
     </details>
 
     <details class="faq">
-      <summary>The app crashes or won't open. What should I do?</summary>
-      <p>Try these steps: (1) close and reopen the app, (2) restart your device, (3) make sure you're on the latest version of the app and iOS. If the problem continues, email us at <a href="mailto:support@xevigo.com">support@xevigo.com</a> with your device model and iOS version.</p>
+      <summary><span data-l="en">The app crashes or won't open. What should I do?</span><span data-l="zh">应用崩溃或打不开，怎么办？</span></summary>
+      <p data-l="en">Try these steps: (1) close and reopen the app, (2) restart your device, (3) make sure you're on the latest version of the app and iOS. If the problem continues, email us at <a href="mailto:support@xevigo.com">support@xevigo.com</a> with your device model and iOS version.</p>
+      <p data-l="zh">请尝试以下步骤：(1) 关闭并重新打开应用，(2) 重启设备，(3) 确认应用和 iOS 都已更新到最新版本。若问题依旧，请发邮件至 <a href="mailto:support@xevigo.com">support@xevigo.com</a>，并附上你的设备型号和 iOS 版本。</p>
     </details>
 
     <details class="faq">
-      <summary>How is my data handled?</summary>
-      <p>AirGameBox does not collect personal information for gameplay. See our <a href="/privacy/">Privacy Policy</a> for full details.</p>
+      <summary><span data-l="en">How is my data handled?</span><span data-l="zh">我的数据如何处理？</span></summary>
+      <p data-l="en">AirGameBox does not collect personal information for gameplay. See our <a href="/privacy/">Privacy Policy</a> for full details.</p>
+      <p data-l="zh">AirGameBox 不会为游戏收集个人信息。完整说明请查看我们的<a href="/privacy/">隐私政策</a>。</p>
     </details>
 
-    <h2>Suggestions welcome</h2>
-    <p>Have an idea for a new mini-game or a feature you'd love to see? We build AirGameBox for players like you — tell us at <a href="mailto:support@xevigo.com?subject=AirGameBox%20Suggestion">support@xevigo.com</a>.</p>
+    <h2 data-l="en">Suggestions welcome</h2>
+    <h2 data-l="zh">欢迎提出建议</h2>
+    <p data-l="en">Have an idea for a new mini-game or a feature you'd love to see? We build AirGameBox for players like you — tell us at <a href="mailto:support@xevigo.com?subject=AirGameBox%20Suggestion">support@xevigo.com</a>.</p>
+    <p data-l="zh">对新的迷你游戏或想要的功能有想法吗？AirGameBox 正是为像你这样的玩家打造的——欢迎告诉我们：<a href="mailto:support@xevigo.com?subject=AirGameBox%20Suggestion">support@xevigo.com</a>。</p>
   </main>
 
   <footer class="site-footer">
@@ -98,11 +129,11 @@
         Xevigo
       </a>
       <ul class="footer-links">
-        <li><a href="/support/">Support</a></li>
-        <li><a href="/privacy/">Privacy Policy</a></li>
-        <li><a href="/terms/">Terms of Use</a></li>
+        <li><a href="/support/"><span data-l="en">Support</span><span data-l="zh">支持</span></a></li>
+        <li><a href="/privacy/"><span data-l="en">Privacy Policy</span><span data-l="zh">隐私政策</span></a></li>
+        <li><a href="/terms/"><span data-l="en">Terms of Use</span><span data-l="zh">使用条款</span></a></li>
       </ul>
-      <p class="footer-copy">© 2026 Xevigo. All rights reserved.</p>
+      <p class="footer-copy"><span data-l="en">© 2026 Xevigo. All rights reserved.</span><span data-l="zh">© 2026 Xevigo. 保留所有权利。</span></p>
     </div>
   </footer>
 

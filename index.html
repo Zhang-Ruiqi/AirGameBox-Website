@@ -1,9 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-title-en="Xevigo — Home of AirGameBox" data-title-zh="Xevigo —— AirGameBox 官方网站">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Xevigo — Home of AirGameBox</title>
+  <script>
+    (function () {
+      try {
+        var el = document.documentElement;
+        var saved = localStorage.getItem('xv-locale');
+        var loc = saved || ((navigator.language || 'en').toLowerCase().indexOf('zh') === 0 ? 'zh' : 'en');
+        el.setAttribute('data-locale', loc);
+        el.setAttribute('lang', loc === 'zh' ? 'zh-Hans' : 'en');
+        var te = el.getAttribute('data-title-en'), tz = el.getAttribute('data-title-zh');
+        if (te && tz) document.title = loc === 'zh' ? tz : te;
+      } catch (e) {}
+    })();
+  </script>
   <meta name="description" content="Xevigo makes light, joyful mobile games. Download AirGameBox — a fresh box of casual fun, free on the App Store.">
   <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -21,10 +34,11 @@
         Xevigo
       </a>
       <ul class="nav-links">
-        <li class="hide-mobile"><a href="/#features">Features</a></li>
-        <li><a href="/support/">Support</a></li>
-        <li class="hide-mobile"><a href="/privacy/">Privacy</a></li>
-        <li><a href="/#download" class="nav-cta">Get the App</a></li>
+        <li class="hide-mobile"><a href="/#features"><span data-l="en">Features</span><span data-l="zh">功能</span></a></li>
+        <li><a href="/support/"><span data-l="en">Support</span><span data-l="zh">支持</span></a></li>
+        <li class="hide-mobile"><a href="/privacy/"><span data-l="en">Privacy</span><span data-l="zh">隐私</span></a></li>
+        <li><a href="/#download" class="nav-cta"><span data-l="en">Get the App</span><span data-l="zh">获取应用</span></a></li>
+        <li><button class="lang-toggle" type="button" aria-label="Switch language / 切换语言">🌐 <span data-l="en">中文</span><span data-l="zh">EN</span></button></li>
       </ul>
     </div>
   </header>
@@ -36,17 +50,19 @@
     <div class="blob blob-3"></div>
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="hero-badge"><span class="dot"></span> New from Xevigo</span>
-        <h1>Meet <span class="grad">AirGameBox</span> — a whole box of fun in your pocket</h1>
-        <p class="lede">Quick to pick up, hard to put down. AirGameBox brings light, cheerful casual games to your iPhone — no manuals, no pressure, just play.</p>
+        <span class="hero-badge"><span class="dot"></span> <span data-l="en">New from Xevigo</span><span data-l="zh">来自 Xevigo 的新作</span></span>
+        <h1 data-l="en">Meet <span class="grad">AirGameBox</span> — a whole box of fun in your pocket</h1>
+        <h1 data-l="zh">遇见 <span class="grad">AirGameBox</span>：口袋里的欢乐盒子</h1>
+        <p class="lede" data-l="en">Quick to pick up, hard to put down. AirGameBox brings light, cheerful casual games to your iPhone — no manuals, no pressure, just play.</p>
+        <p class="lede" data-l="zh">上手快，放不下。AirGameBox 为你的 iPhone 带来轻松欢快的休闲小游戏——没有说明书，没有压力，打开即玩。</p>
         <div class="hero-actions">
           <a href="#download" class="appstore-btn" aria-label="Download on the App Store">
             <svg class="apple-icon" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-            <span class="btn-text"><small>Download on the</small><strong>App Store</strong></span>
+            <span class="btn-text"><small><span data-l="en">Download on the</span><span data-l="zh">下载于</span></small><strong>App Store</strong></span>
           </a>
-          <a href="#about" class="btn-secondary">Learn more</a>
+          <a href="#about" class="btn-secondary"><span data-l="en">Learn more</span><span data-l="zh">了解更多</span></a>
         </div>
-        <p class="hero-note">Free to download · Designed for iPhone</p>
+        <p class="hero-note"><span data-l="en">Free to download · Designed for iPhone</span><span data-l="zh">免费下载 · 专为 iPhone 设计</span></p>
       </div>
 
       <div class="phone-wrap">
@@ -57,11 +73,11 @@
               <img src="/assets/icon.png" alt="AirGameBox" style="width: 100%; height: 100%; border-radius: 24px; object-fit: cover;">
             </div>
             <div class="app-name">AirGameBox</div>
-            <div class="app-tag">Tap. Play. Smile.</div>
+            <div class="app-tag"><span data-l="en">Tap. Play. Smile.</span><span data-l="zh">轻点 · 畅玩 · 微笑</span></div>
           </div>
         </div>
-        <div class="float-chip chip-1"><span class="emoji">🎮</span> Instant fun</div>
-        <div class="float-chip chip-2"><span class="emoji">✨</span> New games inside</div>
+        <div class="float-chip chip-1"><span class="emoji">🎮</span> <span data-l="en">Instant fun</span><span data-l="zh">即刻畅玩</span></div>
+        <div class="float-chip chip-2"><span class="emoji">✨</span> <span data-l="en">New games inside</span><span data-l="zh">更多新游戏</span></div>
       </div>
     </div>
   </section>
@@ -70,30 +86,40 @@
   <section class="section" id="features">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Why AirGameBox</span>
-        <h2>Everything a casual game should be</h2>
-        <p>We sweat the small stuff so playing feels effortless — whether you have thirty seconds or a whole evening.</p>
+        <span class="eyebrow"><span data-l="en">Why AirGameBox</span><span data-l="zh">为什么选择 AirGameBox</span></span>
+        <h2 data-l="en">Everything a casual game should be</h2>
+        <h2 data-l="zh">休闲游戏该有的样子</h2>
+        <p data-l="en">We sweat the small stuff so playing feels effortless — whether you have thirty seconds or a whole evening.</p>
+        <p data-l="zh">我们打磨每一个细节，让游玩毫不费力——无论你只有三十秒，还是一整个夜晚。</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon fi-1">⚡️</div>
-          <h3>Pick up &amp; play</h3>
-          <p>Zero learning curve. Open the app and you're playing within seconds — perfect for commutes, queues, and coffee breaks.</p>
+          <h3 data-l="en">Pick up &amp; play</h3>
+          <h3 data-l="zh">即开即玩</h3>
+          <p data-l="en">Zero learning curve. Open the app and you're playing within seconds — perfect for commutes, queues, and coffee breaks.</p>
+          <p data-l="zh">零学习成本。打开应用几秒内就能开玩——通勤、排队、喝咖啡的间隙都合适。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon fi-2">🎁</div>
-          <h3>A box full of games</h3>
-          <p>AirGameBox is more than one game — it's a growing collection of bite-sized challenges, all in a single lightweight app.</p>
+          <h3 data-l="en">A box full of games</h3>
+          <h3 data-l="zh">一整盒游戏</h3>
+          <p data-l="en">AirGameBox is more than one game — it's a growing collection of bite-sized challenges, all in a single lightweight app.</p>
+          <p data-l="zh">AirGameBox 不止一款游戏——它是一个不断丰富的迷你游戏合集，全都装在一个轻巧的应用里。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon fi-3">🪶</div>
-          <h3>Light &amp; friendly</h3>
-          <p>Small download, smooth performance, and a cheerful design that's easy on your eyes and your battery.</p>
+          <h3 data-l="en">Light &amp; friendly</h3>
+          <h3 data-l="zh">轻巧友好</h3>
+          <p data-l="en">Small download, smooth performance, and a cheerful design that's easy on your eyes and your battery.</p>
+          <p data-l="zh">下载小巧，运行流畅，明快的设计对眼睛和电量都很友好。</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon fi-4">🔒</div>
-          <h3>Play with peace of mind</h3>
-          <p>No account required and no personal data collected. Your playtime stays yours — see our Privacy Policy for details.</p>
+          <h3 data-l="en">Play with peace of mind</h3>
+          <h3 data-l="zh">安心畅玩</h3>
+          <p data-l="en">No account required and no personal data collected. Your playtime stays yours — see our Privacy Policy for details.</p>
+          <p data-l="zh">无需账号，不收集个人数据。你的游戏时光只属于你——详见我们的隐私政策。</p>
         </div>
       </div>
     </div>
@@ -103,21 +129,24 @@
   <section class="section alt" id="about">
     <div class="container about-inner">
       <div class="about-text">
-        <span class="eyebrow">About the app</span>
-        <h2>Casual gaming, the way it should feel</h2>
-        <p>AirGameBox was built around one simple idea: games should make your day a little brighter, not demand your whole schedule.</p>
-        <p>Every mini-game inside is designed to be understood at a glance and enjoyed at your own pace. No punishing difficulty spikes, no endless grind — just satisfying, feel-good play.</p>
+        <span class="eyebrow"><span data-l="en">About the app</span><span data-l="zh">关于应用</span></span>
+        <h2 data-l="en">Casual gaming, the way it should feel</h2>
+        <h2 data-l="zh">休闲游戏，本该有的感觉</h2>
+        <p data-l="en">AirGameBox was built around one simple idea: games should make your day a little brighter, not demand your whole schedule.</p>
+        <p data-l="zh">AirGameBox 源于一个简单的想法：游戏应该让你的一天更明亮一点，而不是占用你全部的时间。</p>
+        <p data-l="en">Every mini-game inside is designed to be understood at a glance and enjoyed at your own pace. No punishing difficulty spikes, no endless grind — just satisfying, feel-good play.</p>
+        <p data-l="zh">每一款迷你游戏都力求一眼就懂，让你按自己的节奏享受。没有惩罚性的难度飙升，没有无尽的肝度——只有令人满足的愉快游玩。</p>
         <ul class="about-list">
-          <li><span class="check">✓</span> Works offline — play anywhere, anytime</li>
-          <li><span class="check">✓</span> Family-friendly content, suitable for all ages</li>
-          <li><span class="check">✓</span> Regular updates with fresh mini-games</li>
+          <li><span class="check">✓</span> <span data-l="en">Works offline — play anywhere, anytime</span><span data-l="zh">离线可玩——随时随地畅玩</span></li>
+          <li><span class="check">✓</span> <span data-l="en">Family-friendly content, suitable for all ages</span><span data-l="zh">老少皆宜的内容，适合所有年龄</span></li>
+          <li><span class="check">✓</span> <span data-l="en">Regular updates with fresh mini-games</span><span data-l="zh">定期更新，加入新的迷你游戏</span></li>
         </ul>
       </div>
       <div class="about-visual">
-        <div class="stat-card"><div class="num">10+</div><div class="lbl">Mini-games inside</div></div>
-        <div class="stat-card"><div class="num">&lt;60s</div><div class="lbl">From download to playing</div></div>
-        <div class="stat-card"><div class="num">4+</div><div class="lbl">Age rating</div></div>
-        <div class="stat-card"><div class="num">100%</div><div class="lbl">Feel-good moments</div></div>
+        <div class="stat-card"><div class="num">10+</div><div class="lbl"><span data-l="en">Mini-games inside</span><span data-l="zh">内置迷你游戏</span></div></div>
+        <div class="stat-card"><div class="num">&lt;60s</div><div class="lbl"><span data-l="en">From download to playing</span><span data-l="zh">从下载到开玩</span></div></div>
+        <div class="stat-card"><div class="num">4+</div><div class="lbl"><span data-l="en">Age rating</span><span data-l="zh">年龄分级</span></div></div>
+        <div class="stat-card"><div class="num">100%</div><div class="lbl"><span data-l="en">Feel-good moments</span><span data-l="zh">愉快时刻</span></div></div>
       </div>
     </div>
   </section>
@@ -126,11 +155,13 @@
   <section class="section" id="download">
     <div class="container">
       <div class="cta-band">
-        <h2>Ready to open the box?</h2>
-        <p>Download AirGameBox on the App Store and start playing in under a minute.</p>
+        <h2 data-l="en">Ready to open the box?</h2>
+        <h2 data-l="zh">准备好打开盒子了吗？</h2>
+        <p data-l="en">Download AirGameBox on the App Store and start playing in under a minute.</p>
+        <p data-l="zh">在 App Store 下载 AirGameBox，一分钟内即可开玩。</p>
         <a href="#" class="appstore-btn" aria-label="Download AirGameBox on the App Store">
           <svg class="apple-icon" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span class="btn-text"><small>Download on the</small><strong>App Store</strong></span>
+          <span class="btn-text"><small><span data-l="en">Download on the</span><span data-l="zh">下载于</span></small><strong>App Store</strong></span>
         </a>
       </div>
     </div>
@@ -143,13 +174,14 @@
         Xevigo
       </a>
       <ul class="footer-links">
-        <li><a href="/support/">Support</a></li>
-        <li><a href="/privacy/">Privacy Policy</a></li>
-        <li><a href="/terms/">Terms of Use</a></li>
+        <li><a href="/support/"><span data-l="en">Support</span><span data-l="zh">支持</span></a></li>
+        <li><a href="/privacy/"><span data-l="en">Privacy Policy</span><span data-l="zh">隐私政策</span></a></li>
+        <li><a href="/terms/"><span data-l="en">Terms of Use</span><span data-l="zh">使用条款</span></a></li>
       </ul>
-      <p class="footer-copy">© 2026 Xevigo. All rights reserved.</p>
+      <p class="footer-copy"><span data-l="en">© 2026 Xevigo. All rights reserved.</span><span data-l="zh">© 2026 Xevigo. 保留所有权利。</span></p>
     </div>
   </footer>
 
+  <script src="/assets/app.js" defer></script>
 </body>
 </html>

@@ -585,3 +585,27 @@ details.faq p { margin: 12px 0 0; }
   .float-chip { display: none; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ---------- Bilingual (EN / 中文) ---------- */
+/* Show the active language, hide the other. Default (no locale set yet) = EN. */
+html[data-locale="en"] [data-l="zh"],
+html:not([data-locale]) [data-l="zh"] { display: none !important; }
+html[data-locale="zh"] [data-l="en"] { display: none !important; }
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.lang-toggle:hover { color: var(--ink); border-color: var(--ink-faint); }
