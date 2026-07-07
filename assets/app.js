@@ -58,47 +58,7 @@
     return Promise.resolve(legacyCopy(text));
   }
 
-  function initContactForm() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-    var TO = 'support@xevigo.com';
-    var err = form.querySelector('#cf-error');
-
-    function val(id) { var el = form.querySelector(id); return el ? String(el.value || '').trim() : ''; }
-    function showError(msg) { if (err) { err.textContent = msg; err.hidden = false; } }
-    function clearError() { if (err) { err.hidden = true; err.textContent = ''; } }
-
-    Array.prototype.forEach.call(form.querySelectorAll('.btn-send'), function (btn) {
-      btn.addEventListener('click', function () {
-        var name = val('#cf-name');
-        var email = val('#cf-email');
-        var topic = val('#cf-topic') || 'General question';
-        var message = val('#cf-message');
-
-        if (!name) { showError('Please enter your name.'); return; }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
-        if (!message) { showError('Please enter a message.'); return; }
-        clearError();
-
-        var subject = '[' + topic + '] Message from ' + name;
-        var body = 'Name: ' + name + '\nEmail: ' + email + '\nTopic: ' + topic + '\n\n' + message;
-        var eTo = encodeURIComponent(TO), eSu = encodeURIComponent(subject), eBo = encodeURIComponent(body);
-        var provider = btn.getAttribute('data-provider');
-
-        if (provider === 'gmail') {
-          window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + eTo + '&su=' + eSu + '&body=' + eBo, '_blank', 'noopener');
-        } else if (provider === 'outlook') {
-          window.open('https://outlook.live.com/mail/0/deeplink/compose?to=' + eTo + '&subject=' + eSu + '&body=' + eBo, '_blank', 'noopener');
-        } else {
-          window.location.href = 'mailto:' + TO + '?subject=' + eSu + '&body=' + eBo;
-        }
-        toast('Opening your email — review your message and hit send.');
-      });
-    });
-  }
-
   function enhance() {
-    initContactForm();
     var links = document.querySelectorAll('a[href^="mailto:"]');
     Array.prototype.forEach.call(links, function (a) {
       a.addEventListener('click', function () {
